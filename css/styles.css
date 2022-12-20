@@ -161,14 +161,23 @@ figure {
   color: var(--selection-color);
 }
 .backdrop {
-  cursor: not-allowed;
   background-color: rgba(0, 0, 0, 0.2);
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 2;
+  z-index: 1;
+  transform: scale(1);
+  transition-property: visibility, opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
 }
 .modal-window {
   position: absolute;
@@ -194,6 +203,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 /* What we do */
 .what-we-do-list {
