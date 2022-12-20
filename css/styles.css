@@ -160,6 +160,16 @@ figure {
   background-color: var(--section-light-color);
   color: var(--selection-color);
 }
+.backdrop {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+}
 /* What we do */
 .what-we-do-list {
   list-style-type: none;
